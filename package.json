@@ -1,0 +1,52 @@
+{
+  "name": "go-timelayout",
+  "version": "0.1.0",
+  "description": "Go's time.Format, time.Parse and ParseInLocation reference-time layouts for Node, with nanosecond precision and Go's exact error messages.",
+  "keywords": [
+    "go",
+    "golang",
+    "time",
+    "layout",
+    "format",
+    "parse",
+    "strftime",
+    "reference-time",
+    "rfc3339",
+    "nanoseconds"
+  ],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/go-timelayout.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-go"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "bench": "node bench/incumbents.ts",
+    "verify": "node oracle/run.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}
