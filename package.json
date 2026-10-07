@@ -15,10 +15,10 @@
     "nanoseconds"
   ],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/go-timelayout.git"
+    "url": "git+https://github.com/quietpelican42/go-timelayout.git"
   },
   "type": "module",
   "engines": {
